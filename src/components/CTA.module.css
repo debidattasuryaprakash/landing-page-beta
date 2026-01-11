@@ -1,0 +1,114 @@
+.cta {
+    padding-top: var(--spacing-4xl);
+    padding-bottom: var(--spacing-4xl);
+}
+
+.content {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    border-radius: var(--border-radius-2xl);
+    padding: var(--spacing-4xl) var(--spacing-2xl);
+    text-align: center;
+}
+
+.background {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.gradient {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 30%,
+            rgba(255, 255, 255, 0.1) 0%,
+            transparent 50%);
+    animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(20px, 20px);
+    }
+}
+
+.pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 2rem 2rem;
+    opacity: 0.5;
+}
+
+.text {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto var(--spacing-3xl);
+}
+
+.title {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    color: white;
+    margin-bottom: var(--spacing-lg);
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    font-size: var(--font-size-lg);
+    color: rgba(255, 255, 255, 0.9);
+    line-height: var(--line-height-relaxed);
+}
+
+.actions {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    gap: var(--spacing-lg);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Make outline button work on colored background */
+.actions button:nth-child(2) {
+    background-color: transparent;
+    border-color: white;
+    color: white;
+}
+
+.actions button:nth-child(2):hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: white;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cta {
+        padding-top: var(--spacing-3xl);
+        padding-bottom: var(--spacing-3xl);
+    }
+
+    .content {
+        padding: var(--spacing-3xl) var(--spacing-xl);
+    }
+
+    .title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
